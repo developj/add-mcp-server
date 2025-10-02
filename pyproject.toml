@@ -1,0 +1,26 @@
+# Project metadata
+[project]
+name = "mcp-server-deepdive-development"   # Name of the project
+version = "0.1.0"                          # Project version
+description = "Add your description here"   # Short description
+readme = "README.md"                       # Path to README file
+requires-python = ">=3.12"                 # Minimum required Python version
+dependencies = [                           # List of project dependencies
+    "mcp[cli]>=1.16.0",
+]
+
+# Entry points for command-line scripts
+[project.scripts]
+mcp-server = "mcpserver.__main__:main"     # CLI command 'mcp-server' runs main() in mcpserver.__main__
+
+# Build system configuration
+[build-system]
+requires = ["setuptools"]                  # Build tool dependencies
+build-backend = "setuptools.build_meta"    # Backend used for building
+
+# Setuptools configuration
+[tool.setuptools]
+package-dir = {"" = "src"}                 # Root package directory is 'src'
+
+[tool.setuptools.packages.find]
+where = ["src"]                            # Look for packages inside 'src' directory
